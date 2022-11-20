@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ELITE HOME | Home</title>	
+	<link rel="shortcut icon" type="image/png" href="{% static 'main/images/logohome2.png' %}"/>
+
+	<!-- url({% static 'main/images/logoa.png' %}); -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="gettemplates.co" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'main/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'main/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<!--<link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}">-->
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'main/css/flexslider.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'main/js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		function getCookie(name) {
+			let cookieValue = null;
+			if (document.cookie && document.cookie !== '') {
+				const cookies = document.cookie.split(';');
+				for (let i = 0; i < cookies.length; i++) {
+					const cookie = cookies[i].trim();
+					// Does this cookie string begin with the name we want?
+					if (cookie.substring(0, name.length + 1) === (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+			}
+			return cookieValue;
+		}
+		const csrftoken = getCookie('csrftoken');
+	</script>
+
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+		<nav class="fh5co-nav" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-2">
+						<div id="fh5co-logo"><a href="{% url 'index' %}">Elite Home</a></div>
+					</div>
+					<div class="col-md-6 col-xs-6 text-center menu-1">
+						<ul>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'product' %}">Product</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+							<li><a href="{% url 'contact' %}">Contact</a></li>
+							
+						
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+						<ul>
+							<li>Hello, {{request.user}}</li>
+							<li><a href="{% url 'logout' %}">Log out</a></li>
+							<li class="shopping-cart"><a href="{% url 'cart' %}" class="cart"><span><small>{{cart.get_cartitems}}</small><i class="icon-shopping-cart"></i></span></a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+	
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url({% static 'main/images/img_bg_1.jpg' %});">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<div class="desc">
+		   						<span class="price">₱8000</span>
+		   						<h2>Alato Cabinet</h2>
+		   						<p>Need one or several cabinets? Closed or open storage? You decide. Alato Cabinet makes it easy to change your mind, and adjustable shelves adapt the storage space to your needs.</p>
+			   					<p><a href="{% url 'product' %}" class="btn btn-primary btn-outline btn-lg">See Products</a></p>
+		   					</div>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url({% static 'main/images/img_bg_2.jpg' %});">
+		   		<div class="container">
+		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<div class="desc">
+		   						<span class="price">₱7500</span>
+		   						<h2>Elite Chair</h2>
+		   						<p>You can raise or reduce the height of Elite armchair. And a smart but simple swivel function means it meets all sorts of needs in all kinds of different rooms. Now you can enjoy the same comfort at the kitchen table or your desk as you're used to when sitting on a sofa!</p>
+			   					<p><a href="{% url 'product' %}" class="btn btn-primary btn-outline btn-lg">See Products</a></p>
+		   					</div>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url({% static 'main/images/img_bg_5.png' %});">
+		   		<div class="container">
+		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<div class="desc">
+		   						<span class="price">₱5400</span>
+		   						<h2>WW Table</h2>
+		   						<p>LACK table in black-brown is easy to match with other furnishings. The honeycomb structured paper filling construction adds strength to the table while keeping it lightweight so it´s easy to move around.</p>
+			   					<p><a href="{% url 'product' %}" class="btn btn-primary btn-outline btn-lg">See Products</a></p>
+		   					</div>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div id="fh5co-services" class="fh5co-bg-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-credit-card"></i>
+						</span>
+						<h3>Credit Card</h3>
+						<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
+						<!-- <p><a href="#" class="btn btn-primary btn-outline">Learn More</a></p> -->
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-wallet"></i>
+						</span>
+						<h3>Save Money</h3>
+						<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
+						<!-- <p><a href="#" class="btn btn-primary btn-outline">Learn More</a></p> -->
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-paper-plane"></i>
+						</span>
+						<h3>Free Delivery</h3>
+						<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
+						<!-- <p><a href="#" class="btn btn-primary btn-outline">Learn More</a></p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fh5co-product">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-12 col-md-offset-2 text-center fh5co-heading">
+					<!-- <span>Cool Stuff</span> -->
+					<h2>Products</h2>
+					<p>Enjoy and shop with high quality Elite furnitures.</p>
+				</div>
+			</div>
+			<div class="row">
+				{% for productions in products %}
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url({{productions.imageURL}});">
+							<div class="inner">
+								<p>
+									<a data-product={{productions.id}} data-action="add" class="icon update-cart"><i class="icon-shopping-cart"></i></a>
+									<a href="{{productions.imageURL}}" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="#">{{productions.product_name}}</a></h3>
+							<div class="">In: {{productions.product_category}}</div>
+							<span class="price">₱{{productions.product_price|floatformat:2}}</span>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="fh5co-testimonial" class="fh5co-bg-section">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-12 col-md-offset-2 text-center fh5co-heading">
+					<span>Testimony</span>
+					<h2>Happy Clients</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-1">
+					<div class="row animate-box">
+						<div class="owl-carousel owl-carousel-fullwidth">
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="{% static 'main/images/person1.jpg' %}" alt="user">
+									</figure>
+									<span>Jean Doe</a></span>
+									<blockquote>
+										<p>&ldquo;In Elite Home their furnitures are top tier, high-quality, and elite of among all funitures store. I highly recommend to make your house elite.&rdquo;</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="{% static 'main/images/person2.jpg' %}" alt="user">
+									</figure>
+									<span>Josh Doe</a></span>
+									<blockquote>
+										<p>&ldquo;I never experienced a bad quality funitures in Elite home. All furnitures are all 5 star quality.&rdquo;</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<figure>
+										<img src="{% static 'main/images/person3.jpg' %}" alt="user">
+									</figure>
+									<span>John Doe</a></span>
+									<blockquote>
+										<p>&ldquo;It is really an amazing experience to have an elite furnitures in my home as I am now a new home owner. Happy to buy again.&rdquo;</p>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="fh5co-counter" class="fh5co-bg" style="background-image:url(images/img_bg_5.png);">
+		<div class="container">
+			<div class="row">
+				<div class="display-t">
+					<br><br><br>
+					<div class="d-flex justify-content-center">
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<div class="icon">
+									<i class="icon-eye"></i>
+								</div>
+
+								<div class="counter js-counter" data-from="0" data-to="22070" data-speed="5000" data-refresh-interval="50">1</div>
+								<div class="counter-label">Customers</div>
+
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<div class="icon">
+									<i class="icon-shopping-cart"></i>
+								</div>
+
+								<div class="counter js-counter" data-from="0" data-to="450" data-speed="5000" data-refresh-interval="50">1</div>
+								<div class="counter-label">Happy Clients</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<div class="icon">
+									<i class="icon-shop"></i>
+								</div>
+								<div class="counter js-counter" data-from="0" data-to="700" data-speed="5000" data-refresh-interval="50">1</div>
+								<div class="counter-label">All Products</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-clock"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="5605" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Hours Spent</span>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer id="footer" >
+		<div class="container">
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<h5 class="">Datoy, Jilcres and Gonzalve, Russell Sean CSIT327 F1-C1 AY 2021 - 2022</h5> 
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="http://www.twitter.com"><i class="icon-twitter"></i></a></li>
+							<li><a href="http://www.facebook.com"><i class="icon-facebook"></i></a></li>
+							<li><a href="http://www.instagram.com"><i class="icon-instagram"></i></a></li>
+							<li><a href="http://www.pinterest.com"><i class="icon-pinterest"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="{% static 'main/js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'main/js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'main/js/jquery.waypoints.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'main/js/jquery.countTo.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'main/js/jquery.flexslider-min.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'main/js/main.js' %}"></script>
+	<script src="{% static 'main/js/cart.js' %}"></script>
+	</body>
+</html>
+

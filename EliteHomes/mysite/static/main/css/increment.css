@@ -1,0 +1,19 @@
+button{
+    background-color: green;
+}
+
+button:hover{
+    background: grey;
+}
+
+.bt-minus{
+    width: 1.8em;
+}
+
+.bt-add{
+    width: 1.8em;
+}
+
+.input-quantity{
+    width: 1.5em;
+}

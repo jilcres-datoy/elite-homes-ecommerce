@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+ 
+{% block title %}Products | View{% endblock title %}
+ 
+{% block content %}
+    <div class="container p-4">
+        <h1 class="text-center">Product</h1> 
+        <span><a type = "button" class="btn btn-primary ml-md-5 mb-lg-5" id="" href="{% url 'addProduct' %}">ADD PRODUCT</a></span>  
+            <div class="table-responsive " >
+                <table id="datatable1" class="table table-bordered table-hover ">
+                        <thead>
+                            <th class=" text-center"><input type="checkbox" onchange="
+                                if(this.checked)
+                                    dt.rows().select();
+                                else
+                                    dt.rows().deselect();
+                            "></th>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Category</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </thead>
+                    <tbody>
+                        {% for product in products %}  
+                            <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td class="text-center">{{product.id}}</td>
+                            <td class="text-center">{{product.product_name}}</td>
+                            <td class="text-center"><img src="{{product.imageURL}}" width="100" 
+                                height="100" alt="no image"></div></td>
+                            <td class="text-center">{{product.product_price|floatformat:2}}</td>
+                            <td class="text-center">{{product.product_quantity}}</td>
+                            <td class="text-center">{{product.product_category}}</td>
+                            <td>
+
+                                <!-- Button trigger modal -->
+                                <div class="text-center">
+                                   <a class="btn btn-sm btn-primary" href="{% url 'updateproduct' product.id %}">
+                                        <span class="fas fa-edit"></span>
+                                   </a>
+                                </div>
+                                </td>
+    
+                                <!--Delete Warning Modal Trigger-->
+                                <td>
+                                    <div class="text-center">
+                                        <a type="button" class="btn btn-sm btn-danger" href="{% url 'deleteproduct' product.id %}">
+                                            <span class="fas fa-trash"></span>
+                                            
+                                        </a>
+                                    </div>
+                                </td>
+                                 </tr>
+                        {% endfor %}
+                    </tbody>
+                
+                </table>
+            </div>
+    </div>
+{% endblock content %} 
