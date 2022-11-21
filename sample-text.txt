@@ -1,1 +1,2 @@
-this is a sample text to demo git
+this is a sample text to demo GIT functions and GitHub Repository
+
